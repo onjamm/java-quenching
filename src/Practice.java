@@ -12,9 +12,22 @@ public class Practice {
      * @return the sum of the odd numbers in the array
      */
     public static int oddSum(int[] nums) {
-        return 0;
-    }
 
+        //returns the sum of the odd nums in array
+        if  (nums.length == 0) {
+            return 0;
+        }
+
+        int sum = 0;
+        
+        for(int num : nums) {
+            if (num % 2 != 0) {
+                sum += num;
+            }
+        }
+
+       return sum;
+    }
     /**
      * Returns the shortest word in the Set.
      * 
