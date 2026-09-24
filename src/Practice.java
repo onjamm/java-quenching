@@ -2,6 +2,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.HashSet;
+import java.util.HashMap;
 
 public class Practice {
     /**
@@ -125,7 +126,17 @@ public class Practice {
      * @return a frequency map of values in the list
      */
     public static <T> Map<T, Integer> frequencies(ListNode<T> head) {
-        return null;
+        Map<T, Integer> result = new HashMap<>();
+        
+        ListNode<T> current = head;
+
+        while(current != null) {
+            int count = result.getOrDefault(current.data, 0);
+            result.put(current.data, count+1);
+            current = current.next;
+        }
+
+        return result;
     }
 
 
