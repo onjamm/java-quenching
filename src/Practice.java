@@ -15,11 +15,12 @@ public class Practice {
     public static int oddSum(int[] nums) {
 
         //returns the sum of the odd nums in array
-        if  (nums.length == 0) {
+
+        if (nums == null) {
             return 0;
         }
 
-        if (nums == null) {
+        if  (nums.length == 0) {
             return 0;
         }
 
@@ -94,7 +95,20 @@ public class Practice {
      * @throws IllegalArgumentException if head is null
      */
     public static int biggestNumber(ListNode<Integer> head) {
-        return 0;
+
+        if (head == null) {
+            throw new IllegalArgumentException("Head cannot be null");
+        }
+        ListNode<Integer> current = head;
+        int greatest = Integer.MIN_VALUE;
+        while (current != null) {
+            if(current.data > greatest) {
+                greatest = current.data;
+            }
+            current = current.next;
+        }
+
+        return greatest;
     }
 
     /**
