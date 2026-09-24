@@ -18,6 +18,10 @@ public class Practice {
             return 0;
         }
 
+        if (nums == null) {
+            return 0;
+        }
+
         int sum = 0;
         
         for(int num : nums) {
@@ -40,7 +44,21 @@ public class Practice {
      * @throws NullPointerException if words is null
      */
     public static String shortestWord(Set<String> words) {
-        return null;
+
+        if (words.isEmpty()) {
+            throw new IllegalArgumentException("Set of words cannot be empty");
+        } 
+        if(words == null) {
+            throw new NullPointerException("Set of words cannot be null");
+        }
+
+        String shortest = null;
+        for (String word : words) {
+            if (shortest == null || shortest.length() > word.length() || (word.length() == shortest.length() && word.compareTo(shortest) < 0)) {
+                shortest = word;
+            }
+        }
+        return shortest;
     }
 
     /**
